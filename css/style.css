@@ -1,0 +1,364 @@
+/* ==========================================
+   Portfolio stylesheet — Abemelek Samson
+   ========================================== */
+
+/* Palette
+   Primary   #146356            (deep teal, same as the logo)
+   Dark      #1e293b            (text)
+   Accent    hsl(28, 88%, 52%)  (warm amber)
+   Light     #f3f7f6            (page background)
+*/
+
+/* ---------- Reset ---------- */
+* {
+    box-sizing: border-box;
+}
+
+/* ---------- Base ---------- */
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background-color: #f3f7f6;
+    color: #1e293b;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+mark {
+    background-color: rgba(240, 134, 26, 0.28);
+}
+
+a {
+    text-decoration: none;
+}
+
+blockquote {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+code,
+pre {
+    font-family: 'Courier New', monospace;
+}
+
+abbr[title] {
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
+/* ---------- Layout ---------- */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+section,
+aside {
+    margin: 2rem 0;
+    padding: 1.5rem;
+}
+
+aside {
+    border-left: 6px solid hsl(28, 88%, 52%);
+    background-image: radial-gradient(circle at top left, #fef2e2, white 70%);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+    background-color: #1e293b;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Headings ---------- */
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 {
+    color: #146356;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: rgb(20, 99, 86);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2::before {
+    content: "// ";
+    color: hsl(28, 88%, 52%);
+}
+
+h2 + p {
+    font-size: 1.1rem;
+}
+
+h2 + p::first-line {
+    font-weight: 600;
+}
+
+h3 {
+    color: hsl(170, 66%, 23%);
+    font-size: 1.2rem;
+}
+
+/* ---------- Link states ---------- */
+a:link {
+    color: #146356;
+}
+
+a:visited {
+    color: #6b3fa0;
+}
+
+a:hover {
+    color: hsl(28, 88%, 42%);
+    text-decoration: underline;
+}
+
+a:active {
+    color: #b03a2e;
+}
+
+/* ---------- Link icons ---------- */
+a[href^="https"]::after {
+    content: " ↗";
+}
+
+a[href^="mailto"]::before {
+    content: "✉ ";
+}
+
+a[href^="tel"]::before {
+    content: "☎ ";
+}
+
+a[download]::before {
+    content: "↓ ";
+}
+
+#projects a[href$=".html"]::after {
+    content: " →";
+}
+
+/* ---------- Components ---------- */
+.tagline {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #52606d;
+    letter-spacing: 1px;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border: 2px solid #146356;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.btn {
+    background-color: #146356;
+    background-image: linear-gradient(180deg, #146356, #0b3b34);
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.6rem 1.2rem;
+    margin: 0.5rem 0.25rem 0 0;
+}
+
+[class*="btn"] {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background-image: linear-gradient(180deg, #0f4f45, #082b26);
+}
+
+.btn-secondary {
+    background-image: none;
+    background-color: #52606d;
+}
+
+.btn-secondary:hover {
+    background-image: none;
+    background-color: #3e4c59;
+}
+
+.card {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    border: 1px solid #d1dfdd;
+    border-left: 4px solid hsl(28, 88%, 52%);
+}
+
+.card:hover {
+    background-color: #f7fbfa;
+}
+
+.card > p {
+    color: #52606d;
+}
+
+.card img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.card img {
+    opacity: 0.85;
+}
+
+.card:hover img {
+    opacity: 1;
+}
+
+iframe {
+    display: block;
+    max-width: 100%;
+}
+
+dialog::backdrop {
+    background-color: rgba(11, 59, 52, 0.6);
+}
+
+/* ---------- Forms ---------- */
+fieldset {
+    margin: 0 0 1rem;
+    padding: 1rem;
+    border: 2px solid #d1dfdd;
+}
+
+legend ~ label {
+    font-weight: 600;
+}
+
+label[for^="lvl"] {
+    display: inline-block;
+    width: 7rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    border: 2px solid #146356;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.4rem;
+}
+
+/* ---------- Tables ---------- */
+table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background-color: white;
+}
+
+th,
+td {
+    border: 1px solid #bfd3d0;
+    padding: 0.5rem 0.75rem;
+}
+
+caption {
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e8f1ef;
+}
+
+/* ---------- Lists ---------- */
+ul ul {
+    list-style-type: square;
+}
+
+ol li:first-child {
+    font-weight: 600;
+}
+
+/* ---------- Header ---------- */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-image: url("../images/pattern.png"),
+                      linear-gradient(135deg, #146356, #0b3b34);
+    color: white;
+}
+
+#logo,
+header img {
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+header img {
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+header h1 {
+    color: white;
+}
+
+header .tagline {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+header nav a:link,
+header nav a:visited {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+header .btn {
+    background-image: none;
+    background-color: hsl(28, 88%, 52%);
+    color: #1e293b;
+}
+
+header .btn:hover {
+    background-image: none;
+    background-color: hsl(28, 88%, 42%);
+}
+
+/* ---------- Contact ---------- */
+#contact {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+                      url("../images/contact-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}

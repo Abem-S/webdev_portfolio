@@ -7,6 +7,8 @@
     <meta name="keywords" content="Abemelek Samson, portfolio, software engineering, web developer, HTML">
     <meta name="author" content="Abemelek Samson">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Abemelek Samson | Portfolio</title>
 </head>
 <body>
@@ -14,9 +16,9 @@
         <canvas id="logo" width="120" height="120">Abemelek Samson logo</canvas>
         <h1>Abemelek Samson</h1>
         <img src="images/profile.jpg" alt="Portrait of Abemelek Samson smiling" title="Abemelek Samson" width="200" height="200">
-        <p>Software Engineering student and aspiring web developer.</p>
+        <p class="tagline">Software Engineering student and aspiring web developer.</p>
 
-        <button type="button" onclick="document.getElementById('hireDialog').showModal()">Hire me</button>
+        <button type="button" class="btn" onclick="document.getElementById('hireDialog').showModal()">Hire me</button>
         <dialog id="hireDialog">
             <h2>Available for internships</h2>
             <p>I am available for internships and freelance web projects from June 2027.</p>
@@ -25,11 +27,11 @@
         </dialog>
 
         <nav>
-            <a href="#about">About</a> |
-            <a href="#skills">Skills</a> |
-            <a href="#projects">Projects</a> |
-            <a href="#education">Education</a> |
-            <a href="#contact">Contact</a> |
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
             <a href="projects.html">All Projects</a>
         </nav>
     </header>
@@ -66,14 +68,14 @@
             <h2>Skills</h2>
             <ul>
                 <li>Programming Languages
-                    <ul type="square">
+                    <ul>
                         <li>Python</li>
                         <li>C++</li>
                         <li>Java</li>
                     </ul>
                 </li>
                 <li>Web Development
-                    <ul type="circle">
+                    <ul>
                         <li>HTML</li>
                         <li>CSS (learning)</li>
                         <li>JavaScript (next)</li>
@@ -104,7 +106,7 @@
             <canvas id="skillsChart" width="300" height="150">Skills bar chart</canvas>
 
             <h3>My Learning Roadmap</h3>
-            <ol type="1">
+            <ol>
                 <li>HTML structure and content</li>
                 <li>CSS layout and design</li>
                 <li>JavaScript and the DOM</li>
@@ -125,19 +127,19 @@
 
         <section id="projects">
             <h2>Projects</h2>
-            <article>
+            <article class="card">
                 <h3>Simple Calculator</h3>
                 <img src="images/project-calculator.png" alt="Screenshot of the calculator showing 12 + 30 = 42" width="400" height="250">
                 <p>A calculator that adds, subtracts, multiplies and divides.</p>
             </article>
 
-            <article>
+            <article class="card">
                 <h3>Library Management System</h3>
                 <img src="images/project-library.png" alt="Screenshot of the library management console" width="400" height="250">
                 <p>A console program for borrowing and returning books.</p>
             </article>
 
-            <article>
+            <article class="card">
                 <h3>My First Program</h3>
                 <p>The first thing I wrote in Python was <code>print("Hello, World!")</code>. Later I wrote this loop:</p>
 <pre><code>for i in range(3):
@@ -145,7 +147,7 @@
 </code></pre>
             </article>
 
-            <p><a href="projects.html">See all my projects →</a></p>
+            <p><a href="projects.html">See all my projects</a></p>
         </section>
 
         <section id="education">
@@ -157,7 +159,7 @@
                 <progress id="degree" value="40" max="100">40%</progress> 40%
             </p>
 
-            <table border="1" cellpadding="8" cellspacing="0">
+            <table>
                 <caption>Academic Record — BSc in Software Engineering</caption>
                 <thead>
                     <tr>
@@ -273,7 +275,7 @@
                     <input type="file" id="brief" name="brief">
                     <br><br>
                     <label for="colour">Preferred website colour:</label>
-                    <input type="color" id="colour" name="colour" value="#1f5fa8">
+                    <input type="color" id="colour" name="colour" value="#146356">
                     <br><br>
                     <label for="rating">How much do you like my portfolio? (1–10)</label>
                     <input type="range" id="rating" name="rating" min="1" max="10" value="7">
@@ -302,21 +304,21 @@
                     <label for="copy">Send me a copy of this message</label>
                 </fieldset>
 
-                <button type="submit">Send Message</button>
-                <button type="reset">Clear</button>
+                <button type="submit" class="btn">Send Message</button>
+                <button type="reset" class="btn btn-secondary">Clear</button>
             </form>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Abemelek Samson. All rights reserved.</p>
-        <p>Last updated: <time datetime="2026-11-05">5 November 2026</time></p>
+        <p>Last updated: <time datetime="2026-11-21">21 November 2026</time></p>
     </footer>
 
     <script>
         const canvas = document.getElementById('logo');
         const ctx = canvas.getContext('2d');
-        ctx.fillStyle = "#1f5fa8";
+        ctx.fillStyle = "#146356";
         ctx.fillRect(0, 0, 120, 120);
 
         ctx.beginPath();
@@ -324,7 +326,7 @@
         ctx.fillStyle = "white";
         ctx.fill();
 
-        ctx.fillStyle = "#1f5fa8";
+        ctx.fillStyle = "#146356";
         ctx.font = "bold 36px Arial";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
@@ -333,7 +335,7 @@
         const chart = document.getElementById('skillsChart');
         const chartCtx = chart.getContext('2d');
 
-        chartCtx.fillStyle = "#1f5fa8";
+        chartCtx.fillStyle = "#146356";
         chartCtx.fillRect(20, 130 - 96, 40, 96);
         chartCtx.font = "14px Arial";
         chartCtx.textAlign = "center";
